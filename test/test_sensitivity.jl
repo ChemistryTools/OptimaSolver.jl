@@ -1,4 +1,4 @@
-﻿@testset "Sensitivity ∂n*/∂b and ∂n*/∂μ⁰" begin
+@testset "Sensitivity ∂n*/∂b and ∂n*/∂μ⁰" begin
     # Same 1-row ideal Gibbs problem as test_solver
     μ⁰ = [0.0, 1.0, 2.0]
 

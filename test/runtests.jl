@@ -1,4 +1,4 @@
-﻿using Test
+using Test
 using OptimaJL
 import OptimaJL: solve, solve!   # not exported; import explicitly for tests
 using LinearAlgebra

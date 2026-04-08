@@ -1,4 +1,4 @@
-﻿# ── sciml_interface.jl ─────────────────────────────────────────────────────────
+# ── sciml_interface.jl ─────────────────────────────────────────────────────────
 # Drop-in replacement for IpoptOptimizer() in ChemistryLab.jl.
 #
 # Usage (ChemistryLab side — no internal changes required):

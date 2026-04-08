@@ -1,4 +1,4 @@
-﻿using OptimaJL
+using OptimaJL
 using Documenter
 
 DocMeta.setdocmeta!(

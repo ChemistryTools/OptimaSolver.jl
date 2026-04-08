@@ -1,4 +1,4 @@
-﻿@testset "AD compatibility (ForwardDiff)" begin
+@testset "AD compatibility (ForwardDiff)" begin
     # ── Setup ─────────────────────────────────────────────────────────────────
     # gibbs_hessian_diag is ForwardDiff-compatible
     n0 = [0.5, 0.3, 0.2]

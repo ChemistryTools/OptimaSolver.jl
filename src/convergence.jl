@@ -1,4 +1,4 @@
-﻿# ── convergence.jl ─────────────────────────────────────────────────────────────
+# ── convergence.jl ─────────────────────────────────────────────────────────────
 # KKT convergence criteria and iteration logging.
 #
 # Convergence is declared when the scaled KKT error drops below `tol`:
