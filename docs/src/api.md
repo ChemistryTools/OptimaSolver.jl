@@ -26,8 +26,8 @@ with `SciMLBase.solve`. Use the qualified names `OptimaKit.solve(...)` /
 `OptimaKit.solve!(...)`, or add `import OptimaKit: solve` at the top of your file.
 
 ```@docs
-Optima.solve
-Optima.solve!
+OptimaKit.solve
+OptimaKit.solve!
 ```
 
 ## Sensitivity
