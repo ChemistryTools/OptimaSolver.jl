@@ -10,3 +10,6 @@ docs/Manifest.toml
 
 # Editor
 .vscode/
+
+CLAUDE.md
+.claude
