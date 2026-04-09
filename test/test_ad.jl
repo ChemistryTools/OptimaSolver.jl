@@ -2,7 +2,7 @@
     # ── Setup ─────────────────────────────────────────────────────────────────
     # gibbs_hessian_diag is ForwardDiff-compatible
     n0 = [0.5, 0.3, 0.2]
-    g_h = ForwardDiff.jacobian(n -> OptimaKit.gibbs_hessian_diag(n), n0)
+    g_h = ForwardDiff.jacobian(n -> OptimaLib.gibbs_hessian_diag(n), n0)
     @test all(isfinite, g_h)
 
     # ── kkt_residual is ForwardDiff-compatible through n ──────────────────────
@@ -28,7 +28,7 @@
         n -> begin
             g = similar(n)
             prob.g!(g, n, prob.p)
-            OptimaKit.kkt_residual(prob, n, y_test, g, 1.0e-4).ex
+            OptimaLib.kkt_residual(prob, n, y_test, g, 1.0e-4).ex
         end,
         n_test,
     )
@@ -37,8 +37,8 @@
     # ── hessian_diagonal is ForwardDiff-compatible ────────────────────────────
     h_jac = ForwardDiff.jacobian(
         n -> begin
-            hf = OptimaKit.gibbs_hessian_diag(n)
-            OptimaKit.hessian_diagonal(prob, n, 1.0e-4, hf)
+            hf = OptimaLib.gibbs_hessian_diag(n)
+            OptimaLib.hessian_diagonal(prob, n, 1.0e-4, hf)
         end,
         n_test,
     )
@@ -49,8 +49,8 @@
     @test result.converged
 
     n_sol = result.n
-    hf_sol = OptimaKit.gibbs_hessian_diag(n_sol)
-    h_sol = OptimaKit.hessian_diagonal(prob, n_sol, 1.0e-14, hf_sol)
+    hf_sol = OptimaLib.gibbs_hessian_diag(n_sol)
+    h_sol = OptimaLib.hessian_diagonal(prob, n_sol, 1.0e-14, hf_sol)
     sens = sensitivity(prob, n_sol, result.y, h_sol, 1.0e-14)
 
     @test all(isfinite, sens.∂n_∂b)

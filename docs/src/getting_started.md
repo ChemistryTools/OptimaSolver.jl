@@ -1,21 +1,21 @@
 ```@meta
-CurrentModule = OptimaKit
+CurrentModule = OptimaLib
 ```
 
 # Getting Started
 
 ## Installation
 
-OptimaKit.jl requires Julia ≥ 1.10. Install it from the Julia package manager:
+OptimaLib.jl requires Julia ≥ 1.10. Install it from the Julia package manager:
 
 ```julia
-julia> import Pkg; Pkg.add("OptimaKit")
+julia> import Pkg; Pkg.add("OptimaLib")
 ```
 
 or in Pkg REPL mode (press `]`):
 
 ```
-pkg> add OptimaKit
+pkg> add OptimaLib
 ```
 
 Dependencies (`ForwardDiff`, `SciMLBase`) are resolved automatically.
@@ -39,8 +39,8 @@ $n_i^* = e^{-\mu_i^0}/Z$ where $Z = \sum_j e^{-\mu_j^0}$,
 giving $n^* \approx (0.665,\; 0.245,\; 0.090)$.
 
 ```julia
-using OptimaKit
-import OptimaKit: solve  # solve is intentionally not exported
+using OptimaLib
+import OptimaLib: solve  # solve is intentionally not exported
 
 # --- Objective and gradient ---
 μ⁰ = [0.0, 1.0, 2.0]
@@ -73,11 +73,11 @@ n_exact = exp.(-μ⁰) ./ sum(exp.(-μ⁰))
 @assert maximum(abs, result.n .- n_exact) < 1e-7
 ```
 
-!!! note "Why `import OptimaKit: solve`?"
+!!! note "Why `import OptimaLib: solve`?"
     `solve` is intentionally **not** in Optima's `export` list to avoid
     conflicts with other packages (e.g. `SciMLBase.solve`).
     Use the qualified name `Optima.solve(...)` or add
-    `import OptimaKit: solve` at the top of your file.
+    `import OptimaLib: solve` at the top of your file.
 
 ## Interpreting `OptimaResult`
 

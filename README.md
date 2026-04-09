@@ -1,8 +1,8 @@
-# OptimaKit.jl
+# OptimaLib.jl
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ChemistryTools.github.io/OptimaKit.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ChemistryTools.github.io/OptimaKit.jl/dev/)
-[![Build Status](https://github.com/ChemistryTools/OptimaKit.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ChemistryTools/OptimaKit.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ChemistryTools.github.io/OptimaLib.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ChemistryTools.github.io/OptimaLib.jl/dev/)
+[![Build Status](https://github.com/ChemistryTools/OptimaLib.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ChemistryTools/OptimaLib.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 A Julia-native primal-dual interior-point solver for Gibbs-energy minimisation in
 equilibrium chemistry.
@@ -24,8 +24,8 @@ The algorithm is a log-barrier interior-point method with:
   problems $m$ is the number of elements ($\leq 15$), so this is a dramatic reduction.
 - **Filter line search** (Wächter & Biegler 2006) with Armijo sufficient decrease on the
   barrier objective.
-- **Implicit-differentiation sensitivity** — post-solve computation of $\partial n^*/\partial b$
-  and $\partial n^*/\partial(\mu^0/RT)$ at marginal cost.
+- **Implicit-differentiation sensitivity** — post-solve computation of $\partial n^{\ast}/\partial b$
+  and $\partial n^{\ast}/\partial(\mu^0/RT)$ at marginal cost.
 - **Warm-start** — consecutive solves reuse the previous solution as the starting point.
 - **ForwardDiff/AD compatibility** — no `Float64` casts; the entire solver stack uses
   generic Julia arithmetic.
@@ -35,7 +35,7 @@ The algorithm is a log-barrier interior-point method with:
 ## Installation
 
 ```julia
-julia> import Pkg; Pkg.add("OptimaKit")
+julia> import Pkg; Pkg.add("OptimaLib")
 ```
 
 Requires Julia ≥ 1.10.
@@ -43,8 +43,8 @@ Requires Julia ≥ 1.10.
 ## Quick example
 
 ```julia
-using OptimaKit
-import OptimaKit: solve   # solve is not exported; use qualified name or import
+using OptimaLib
+import OptimaLib: solve   # solve is not exported; use qualified name or import
 
 # Ideal three-species Gibbs problem: minimize Σ nᵢ(μᵢ⁰ + ln nᵢ) subject to Σ nᵢ = 1
 μ⁰ = [0.0, 1.0, 2.0]
@@ -80,11 +80,11 @@ between consecutive solves.
 
 Full documentation with theory, API reference, and worked examples:
 
-<https://ChemistryTools.github.io/OptimaKit.jl>
+<https://ChemistryTools.github.io/OptimaLib.jl>
 
 ## Credits and lineage
 
-OptimaKit.jl is a Julia port of the **Optima** C++ library developed by
+OptimaLib.jl is a Julia port of the **Optima** C++ library developed by
 [Allan Leal](https://erdw.ethz.ch/en/people/profile.allan-leal.html) (ETH Zürich):
 
 <https://github.com/reaktoro/optima>

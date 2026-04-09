@@ -1,10 +1,10 @@
 using Test
-using OptimaKit
-import OptimaKit: solve, solve!   # not exported; import explicitly for tests
+using OptimaLib
+import OptimaLib: solve, solve!   # not exported; import explicitly for tests
 using LinearAlgebra
 using ForwardDiff
 
-@testset "OptimaKit" begin
+@testset "OptimaLib" begin
     include("test_canonicalizer.jl")
     include("test_newton.jl")
     include("test_solver.jl")

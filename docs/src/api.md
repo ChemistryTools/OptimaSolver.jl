@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = OptimaKit
+CurrentModule = OptimaLib
 ```
 
 # API Reference
@@ -22,12 +22,12 @@ Canonicalizer
 ## Solver
 
 `solve` and `solve!` are intentionally **not exported** to avoid naming conflicts
-with `SciMLBase.solve`. Use the qualified names `OptimaKit.solve(...)` /
-`OptimaKit.solve!(...)`, or add `import OptimaKit: solve` at the top of your file.
+with `SciMLBase.solve`. Use the qualified names `OptimaLib.solve(...)` /
+`OptimaLib.solve!(...)`, or add `import OptimaLib: solve` at the top of your file.
 
 ```@docs
-OptimaKit.solve
-OptimaKit.solve!
+OptimaLib.solve
+OptimaLib.solve!
 ```
 
 ## Sensitivity
