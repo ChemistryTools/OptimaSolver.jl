@@ -23,6 +23,7 @@ module OptimaSolver
 using LinearAlgebra
 import ForwardDiff
 import SciMLBase
+using SciMLBase: solve
 
 # ── Source files (dependency order) ──────────────────────────────────────────
 include("problem.jl")           # OptimaProblem, OptimaState, OptimaResult, OptimaOptions
@@ -52,7 +53,7 @@ export Canonicalizer
 export SensitivityResult, sensitivity
 
 # SciML drop-in
-export OptimaOptimizer, reset_cache!
+export OptimaOptimizer, reset_cache!, solve
 
 # Internal components (exported for testing and extension)
 export KKTResidual, kkt_residual, hessian_diagonal, gibbs_hessian_diag
